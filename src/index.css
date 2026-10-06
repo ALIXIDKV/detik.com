@@ -7,3 +7,11 @@ html { scroll-behavior: smooth; }
 .ticker { animation: ticker 30s linear infinite; }
 
 .no-scrollbar::-webkit-scrollbar { display: none; } .no-scrollbar { scrollbar-width: none; }
+
+/* Detikcom mobile news layout */
+img { object-fit: cover; }
+@media (max-width: 640px) {
+  h1 { font-size: 1.9rem !important; line-height: 1.15 !important; }
+  h2 { font-size: 1.35rem !important; }
+  .group h3 { font-size: 1.05rem !important; }
+}
