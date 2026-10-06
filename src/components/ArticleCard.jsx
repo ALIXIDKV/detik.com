@@ -6,7 +6,7 @@ export default function ArticleCard({ a }) {
       <div className="p-4">
         <span className="text-brand text-xs font-bold">{a.cat}</span>
         <h3 className="font-serif font-bold text-lg leading-snug mt-1 group-hover:text-brand transition-colors">{a.title}</h3>
-        <p className="text-xs text-neutral-500 mt-2">{a.time}</p>
+        <p className="text-xs text-neutral-500 mt-2">{a.time}{a.author ? ` • ${a.author}` : ''}</p>
       </div>
     </a>
   )

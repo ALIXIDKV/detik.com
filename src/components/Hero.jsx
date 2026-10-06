@@ -3,7 +3,7 @@ import { SITE } from '../data/site'
 export default function Hero({ a }) {
   return (
     <a href={`#/artikel/${a.id}`} className="group block relative overflow-hidden rounded-lg">
-      <Thumb article={a} className="w-full h-72 sm:h-[26rem] group-hover:scale-105 transition-transform duration-700" />
+      <Thumb article={a} eager className="w-full h-72 sm:h-[26rem] group-hover:scale-105 transition-transform duration-700" />
       <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
       <div className="absolute bottom-0 p-5 sm:p-8 text-white">
         <span className="bg-brand text-xs font-bold px-2 py-1 rounded">{a.cat.toUpperCase()}</span>

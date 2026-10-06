@@ -5,7 +5,7 @@ export default function Comments() {
   const add = () => { if (!text.trim()) return; setList([{ name: name.trim() || 'Anonim', text }, ...list]); setText('') }
   return (
     <section className="mt-10">
-      <h2 className="font-bold text-lg border-l-4 border-brand pl-3 mb-4">Komentar (demo, tidak disimpan)</h2>
+      <h2 className="font-bold text-lg border-l-4 border-brand pl-3 mb-4">Komentar</h2>
       <div className="space-y-2 mb-6">
         <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nama" className="w-full sm:w-60 px-3 py-2 rounded bg-neutral-100 dark:bg-neutral-900 outline-none" />
         <textarea value={text} onChange={(e) => setText(e.target.value)} placeholder="Tulis komentar…" rows={3} className="w-full px-3 py-2 rounded bg-neutral-100 dark:bg-neutral-900 outline-none" />

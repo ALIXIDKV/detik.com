@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Logo from './Logo'
-import { MENU } from '../data/site'
+import { MENU, SITE } from '../data/site'
 const Social = ({ d, label }) => <a href="#/" aria-label={label} className="text-neutral-500 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d={d} /></svg></a>
 export default function Header({ dark, setDark, query, setQuery, cat, setCat }) {
   const [open, setOpen] = useState(false)
@@ -8,6 +8,7 @@ export default function Header({ dark, setDark, query, setQuery, cat, setCat }) 
   const go = (m) => { setCat(m === 'Beranda' ? 'Semua' : m); location.hash = '/'; setOpen(false) }
   return (
     <header className="sticky top-0 z-40 bg-white/95 dark:bg-neutral-950/95 backdrop-blur border-b border-neutral-200 dark:border-neutral-800">
+      <div className="hidden md:block bg-neutral-900 text-neutral-300 text-xs"><div className="max-w-6xl mx-auto px-4 py-1">{SITE.date}</div></div>
       <div className="max-w-6xl mx-auto px-4 h-16 flex items-center gap-4">
         <button className="md:hidden p-1" onClick={() => setOpen(!open)} aria-label="Menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
@@ -27,6 +28,9 @@ export default function Header({ dark, setDark, query, setQuery, cat, setCat }) 
         </div>
       </div>
       {showSearch && <div className="border-t border-neutral-200 dark:border-neutral-800 px-4 py-2 max-w-6xl mx-auto"><input autoFocus value={query} onChange={(e) => { setQuery(e.target.value); location.hash = '/' }} placeholder="Cari berita…" aria-label="Cari" className="w-full px-3 py-2 rounded-full bg-neutral-100 dark:bg-neutral-900 outline-none focus:ring-2 ring-brand" /></div>}
+      <div className="md:hidden flex gap-2 overflow-x-auto px-4 pb-2 no-scrollbar">
+        {MENU.map((m) => <button key={m} onClick={() => go(m)} className={`shrink-0 text-xs font-semibold px-3 py-1 rounded-full ${(cat === m || (m === 'Beranda' && cat === 'Semua')) ? 'bg-brand text-white' : 'bg-neutral-100 dark:bg-neutral-800'}`}>{m}</button>)}
+      </div>
       {open && <div className="md:hidden border-t border-neutral-200 dark:border-neutral-800 p-4 space-y-3">
         {MENU.map((m) => <button key={m} onClick={() => go(m)} className="block font-semibold hover:text-brand">{m}</button>)}
       </div>}
