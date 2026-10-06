@@ -1,4 +1,5 @@
 import { ARTICLES, TAGS } from '../data/site'
+import Thumb from './Thumb'
 export default function Sidebar({ setQuery }) {
   return (
     <aside className="space-y-8">
@@ -7,7 +8,7 @@ export default function Sidebar({ setQuery }) {
         <ol className="space-y-4">
           {ARTICLES.slice(1, 5).map((a, i) => (
             <li key={a.id} className="flex gap-3"><span className="text-3xl font-extrabold text-brand/30 leading-none">{i + 1}</span>
-              <a href={`#/artikel/${a.id}`} className="font-semibold leading-snug hover:text-brand transition-colors">{a.title}</a></li>
+              <a href={`#/artikel/${a.id}`} className="flex gap-3 font-semibold leading-snug hover:text-brand transition-colors"><Thumb article={a} className="w-16 h-12 rounded shrink-0" />{a.title}</a></li>
           ))}
         </ol>
       </section>

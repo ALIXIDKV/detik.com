@@ -1,10 +1,11 @@
+import Logo from './Logo'
 import { MENU, SITE } from '../data/site'
 export default function Footer() {
   return (
     <footer className="bg-neutral-950 text-neutral-300 mt-12 pt-10 pb-6">
       <div className="max-w-6xl mx-auto px-4 grid sm:grid-cols-3 gap-8">
         <div>
-          <div className="text-2xl font-extrabold text-white"><span className="text-brand">Detik</span> Santai</div>
+          <Logo light />
           <p className="text-sm mt-3">Portal berita parodi untuk hiburan. Semua kejadian, tokoh, dan kutipan di sini fiktif.</p>
         </div>
         <div>

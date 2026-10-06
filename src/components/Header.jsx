@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { SITE, MENU } from '../data/site'
+import Logo from './Logo'
+import { MENU } from '../data/site'
 const Social = ({ d, label }) => <a href="#/" aria-label={label} className="text-neutral-500 hover:text-brand transition-colors"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d={d} /></svg></a>
 export default function Header({ dark, setDark, query, setQuery, cat, setCat }) {
   const [open, setOpen] = useState(false)
@@ -11,7 +12,7 @@ export default function Header({ dark, setDark, query, setQuery, cat, setCat }) 
         <button className="md:hidden p-1" onClick={() => setOpen(!open)} aria-label="Menu">
           <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M3 6h18M3 12h18M3 18h18" /></svg>
         </button>
-        <a href="#/" onClick={() => setCat('Semua')} className="text-2xl font-extrabold tracking-tight"><span className="text-brand">Detik</span> Santai</a>
+        <a href="#/" onClick={() => setCat('Semua')} aria-label="Beranda"><Logo /></a>
         <nav className="hidden md:flex gap-5 ml-6 font-semibold text-sm">
           {MENU.map((m) => <button key={m} onClick={() => go(m)} className={`py-1 border-b-2 transition-colors hover:text-brand ${(cat === m || (m === 'Beranda' && cat === 'Semua')) ? 'border-brand text-brand' : 'border-transparent'}`}>{m}</button>)}
         </nav>

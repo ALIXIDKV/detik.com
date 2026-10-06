@@ -1,6 +1,6 @@
-// Foto jika ada; jika tidak, blok warna sebagai placeholder
-const BG = ['from-red-700 to-red-400', 'from-neutral-800 to-neutral-500', 'from-rose-800 to-orange-400', 'from-stone-700 to-red-500']
+import { useState } from 'react'
 export default function Thumb({ article, className = '' }) {
-  if (article.image) return <img src={article.image} alt={article.title} loading="lazy" className={`object-cover ${className}`} />
-  return <div className={`bg-gradient-to-br ${BG[article.id % BG.length]} flex items-center justify-center text-white/70 text-4xl font-serif font-bold ${className}`}>DS</div>
+  const [err, setErr] = useState(false)
+  if (article.image && !err) return <img src={article.image} alt={article.title} loading="lazy" onError={() => setErr(true)} className={`object-cover bg-neutral-200 dark:bg-neutral-800 ${className}`} />
+  return <div className={`bg-gradient-to-br from-neutral-300 to-neutral-500 dark:from-neutral-800 dark:to-neutral-700 ${className}`} />
 }
