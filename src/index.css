@@ -15,3 +15,21 @@ img { object-fit: cover; }
   h2 { font-size: 1.35rem !important; }
   .group h3 { font-size: 1.05rem !important; }
 }
+
+/* Phone layout: force a real single-column news-app presentation. */
+@media (max-width: 767px) {
+  html, body, #root { width: 100%; max-width: 100%; overflow-x: hidden; }
+  .news-shell { display: block !important; width: 100% !important; max-width: none !important; padding: 12px !important; }
+  header > div.max-w-6xl { height: 56px !important; padding-left: 12px !important; padding-right: 12px !important; }
+  header svg { max-width: 100%; }
+  .latest-grid { display: block !important; }
+  .latest-grid > a { margin-bottom: 16px; border-radius: 12px; }
+  .latest-grid > a img { height: 190px !important; }
+  .latest-grid > a > div:last-child { padding: 14px !important; }
+  .latest-grid h3 { font-size: 19px !important; line-height: 1.25 !important; }
+  h1 { font-size: 26px !important; line-height: 1.12 !important; }
+  h2 { font-size: 20px !important; }
+  main .overflow-x-auto > a { width: 78vw !important; max-width: 290px; }
+  main .overflow-x-auto > a img { height: 155px !important; }
+  main .overflow-x-auto > a span.font-serif { font-size: 16px !important; line-height: 1.25 !important; }
+}

@@ -31,7 +31,7 @@ export default function App() {
       <Header {...{ dark, setDark, query, setQuery, cat, setCat }} />
       <BreakingNews />
       {articleId ? <ArticlePage id={articleId} setQuery={setQuery} /> : (
-        <main className="max-w-6xl mx-auto px-4 py-6 grid lg:grid-cols-[1fr_300px] gap-8">
+        <main className="news-shell max-w-6xl mx-auto px-4 py-6 grid lg:grid-cols-[1fr_300px] gap-8">
           <div>
             {list[0] ? (
               <div className="grid md:grid-cols-[2fr_1fr] gap-5">
@@ -62,7 +62,7 @@ export default function App() {
               </>
             )}
             <h2 className="font-bold text-lg border-l-4 border-brand pl-3 mt-10 mb-4">Berita Terbaru</h2>
-            <div className="grid sm:grid-cols-2 gap-5">{latest.map((a) => <ArticleCard key={a.id} a={a} />)}</div>
+            <div className="latest-grid grid sm:grid-cols-2 gap-5">{latest.map((a) => <ArticleCard key={a.id} a={a} />)}</div>
             {cat === 'Semua' && !query && cats.map((c) => (
               <section key={c}>
                 <h2 className="font-bold text-lg border-l-4 border-brand pl-3 mt-10 mb-4">{c}</h2>
