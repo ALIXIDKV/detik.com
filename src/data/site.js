@@ -1,5 +1,5 @@
 // === Ganti nama, foto, dan isi berita di file ini ===
-export const SITE = { name: 'Detik Santai', friend: 'Mahasiswa X', photo: '/foto-teman.jpg', date: '6 Oktober 2026' }
+export const SITE = { name: 'Detikcom', friend: 'Mahasiswa X', photo: '/foto-teman.jpg', date: '6 Oktober 2026' }
 export const MENU = ['Beranda', 'Trending', 'Kampus', 'Viral', 'Hiburan', 'Lifestyle']
 export const TAGS = ['#RajaTelat', '#KampusViral', '#AlasanKreatif', '#AbsensiDitutup', '#TimTelat']
 export const BREAKING = [
