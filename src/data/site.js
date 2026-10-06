@@ -8,7 +8,20 @@ export const BREAKING = [
   'Panitia mempertimbangkan membuat jam mulai khusus untuk sang juara',
 ]
 const F = SITE.friend
-const img = (tags, n = 1) => `https://loremflickr.com/1200/675/${tags}?lock=${n}`
+const img = (tags, n = 1) => {
+  const images = {
+    campus: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=1200&q=80',
+    student: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80',
+    city: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80',
+    food: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80',
+    lifestyle: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80'
+  }
+  const key = tags.includes('university') || tags.includes('classroom') || tags.includes('library') ? 'campus' :
+    tags.includes('food') || tags.includes('coffee') ? 'food' :
+    tags.includes('street') ? 'city' :
+    tags.includes('smartphone') ? 'lifestyle' : 'city'
+  return images[tags] || images[key]
+}
 const AUTHORS = ['Rina Pratama', 'Dimas Wicaksono', 'Putri Anggraini', 'Fajar Nugroho', 'Tim Redaksi']
 export const ARTICLES = [
   { id: 1, author: AUTHORS[0], cat: 'Kampus', time: '2 jam lalu', image: SITE.photo,
